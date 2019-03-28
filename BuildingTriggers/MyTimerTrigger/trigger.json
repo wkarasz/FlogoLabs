@@ -1,0 +1,25 @@
+{
+  "name": "MyTimerTrigger",
+  "version": "0.0.1",
+  "title": "My Timer Trigger",
+  "type": "flogo:trigger",
+  "ref": "github.com/wkarasz/FlogoLabs/BuildingTriggers/MyTimerTrigger",
+  "description": "trigger description",
+  "author": "Billy <you.name@example.org>",
+  "settings":[
+  ],
+  "output": [
+    {
+      "name": "output",
+      "type": "string"
+    }
+  ],
+  "handler": {
+    "settings": [
+      {
+        "name": "seconds",
+        "type": "string"
+      }
+    ]
+  }
+}
