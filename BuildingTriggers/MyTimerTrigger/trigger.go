@@ -4,6 +4,7 @@ import (
 	"context"
 	"strconv"
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
+	"github.com/TIBCOSoftware/flogo-lib/logger"
 	"github.com/carlescere/scheduler"
 )
 
@@ -69,7 +70,7 @@ func (t *MyTrigger) scheduleRepeating(endpoint *trigger.Handler) {
 	fn2 := func() {
 		// Create a map to hold the trigger data
 		triggerData := map[string]interface{}{
-			"output": "Hello World from the new Timer trigger"
+			"output": "Hello World from the new Timer trigger",
 		}
 
 		_, err := endpoint.Handle(context.Background(), triggerData)
