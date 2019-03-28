@@ -87,8 +87,10 @@ func (t *MyTrigger) scheduleRepeating(endpoint *trigger.Handler) {
 func (t *MyTrigger) scheduleJobEverySecond(tgrHandler *trigger.Handler, fn func()) {
 	
 	var interval int = 0
-	seconds, _ := strconv.Atoi(tgrHandler.GetStringSetting("seconds"))
-	interval = interval + seconds
+	if seconds := tgrHandler.GetStringSetting("seconds"); seconds != "" {
+		seconds, _ := strconv.Atoi(seconds)
+		interval = interval + seconds
+	}
 
 	log.Debug("Repeating seconds: ", interval)
 
