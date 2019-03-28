@@ -1,6 +1,7 @@
 {
   "name": "HelloWorld",
   "version": "0.0.1",
+  "title": "Hello World",
   "type": "flogo:activity",
   "description": "Activity Hello World",
   "ref": "github.com/wkarasz/FlogoLabs/BuildingActivities/HelloWorld",
