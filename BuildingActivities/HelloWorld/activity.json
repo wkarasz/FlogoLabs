@@ -1,0 +1,24 @@
+{
+  "name": "HelloWorld",
+  "version": "0.0.1",
+  "type": "flogo:activity",
+  "description": "Activity Hello World",
+  "ref": "github.com/wkarasz/FlogoLabs/BuildingActivities/HelloWorld",
+  "author": "Billy <you.name@example.org>",
+  "inputs":[
+    {
+      "name": "salutation",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "type": "string"
+    }
+  ]
+}
