@@ -3,7 +3,6 @@ package MyTimerTrigger
 import (
 	"context"
 	"strconv"
-	"github.com/TIBCOSoftware/flogo-lib/core/action"
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
 	"github.com/carlescere/scheduler"
 )
@@ -67,7 +66,7 @@ func (t *MyTrigger) Stop() error {
 func (t *MyTrigger) scheduleRepeating(endpoint *trigger.Handler) {
 	log.Info("Scheduling a repeating job")
 
-	fn2: func() {
+	fn2 := func() {
 		// Create a map to hold the trigger data
 		triggerData := map[string]interface{}{
 			"output": "Hello World from the new Timer trigger"
