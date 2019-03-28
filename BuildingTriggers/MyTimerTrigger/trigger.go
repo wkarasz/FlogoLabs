@@ -3,6 +3,8 @@ package MyTimerTrigger
 import (
 	"context"
 	"strconv"
+	"time"
+
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 	"github.com/carlescere/scheduler"
@@ -85,9 +87,9 @@ func (t *MyTrigger) scheduleRepeating(endpoint *trigger.Handler) {
 
 func (t *MyTrigger) scheduleJobEverySecond(tgrHandler *trigger.Handler, fn func()) {
 	
-	var interval int
+	var interval time.Duration
 	seconds, _ := strconv.Atoi(tgrHandler.GetStringSetting("seconds"))
-	interval = interval + seconds
+	interval = interval + time.Duration(seconds)
 
 	log.Debug("Repeating seconds: ", interval)
 
