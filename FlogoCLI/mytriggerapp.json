@@ -1,0 +1,63 @@
+{
+  "name": "My Custom Trigger App",
+  "type": "flogo:app",
+  "version": "0.0.1",
+  "appModel":  "1.0.0",
+  "triggers": [
+    {
+      "id": "timer",
+      "ref": "github.com/wkarasz/FlogoLabs/BuildingTriggers/MyTimerTrigger",
+      "name": "Timer",
+      "description": "Simple timer trigger",
+      "settings": {},
+      "handlers": [
+        {
+          "action": {
+            "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow",
+            "data": {
+              "flowURI": "res://flow:logtest"
+            }
+          },
+          "settings": {
+            "repeating": "false",
+            "notImmediate": "true",
+            "startDate": "2018-01-01T12:00:00Z00:00",
+            "seconds": "2"
+          }
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "flow:logtest",
+      "data": {
+        "name": "logtest",
+        "description": "testing my custom trigger",
+        "tasks": [
+          {
+            "id": "logger_1",
+            "name": "Log Activity",
+            "description": "Log something so I know it worked",
+            "activity": {
+              "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+              "input": {
+                "flowInfo": false,
+                "addToFlow": false
+              },
+              "mappings": {
+                "input": [
+                  {
+                    "type": "assign",
+                    "value": "Hey it works",
+                    "mapTo": "message"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
