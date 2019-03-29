@@ -4,7 +4,9 @@ import (
 	"io/ioutil"
 	"encoding/json"
 	"testing"
+	"context"
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
+	"github.com/TIBCOSoftware/flogo-lib/core/action"
 )
 
 func getJsonMetadata() string {
@@ -18,6 +20,7 @@ func getJsonMetadata() string {
 const testConfig string = `{
   "id": "mytrigger",
   "settings": {
+    "seconds": "5"
   },
   "handlers": [
     {
@@ -64,4 +67,13 @@ func TestInit(t *testing.T) {
 	json.Unmarshal([]byte(testConfig), &config)
 	//tgr.Init(config, runner)
 
+}
+
+type TestRunner struct {
+}
+
+// Run implements action.Runner.Run
+func (tr *TestRunner) Run(context context.Context, action action.Action, uri string, options interface{}) (code int, data interface{}, err error) {
+	log.Debugf("Ran Action: %v", uri)
+	return 0, nil, nil
 }
