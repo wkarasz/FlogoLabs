@@ -25,7 +25,7 @@ func NewFactory(md *trigger.Metadata) trigger.Factory {
 
 // New Creates a new trigger instance for a given id
 func (t *MyTriggerFactory) New(config *trigger.Config) trigger.Trigger {
-	return &MyTrigger{metadata: t.metadata, config:config}
+	return &MyTrigger{metadata: t.metadata, config: config}
 }
 
 // MyTrigger is a stub for your Trigger implementation
