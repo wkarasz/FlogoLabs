@@ -4,7 +4,6 @@ import (
 	"io/ioutil"
 	"encoding/json"
 	"testing"
-
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
 )
 
@@ -19,20 +18,20 @@ func getJsonMetadata() string {
 const testConfig string = `{
   "id": "mytrigger",
   "settings": {
-    "setting": "somevalue"
   },
   "handlers": [
     {
       "settings": {
-        "handler_setting": "somevalue"
-      },
-      "action" {
-	     "id": "test_action"
+        "notImmediate": "true",
+	"startDate": "2018-01-01T12:00:00Z00:00",
+	"repeating": "false",
+	"seconds": "5"
       }
     }
   ]
 }`
 
+/*
 func TestCreate(t *testing.T) {
 
 	// New factory
@@ -51,4 +50,18 @@ func TestCreate(t *testing.T) {
 	if trg == nil {
 		t.Fail()
 	}
+}
+*/
+
+func TestInit(t *testing.T) {
+	// New  factory
+	//f := &TimerFactory{}
+	//tgr := f.New("flogo-timer")
+
+	//runner := &TestRunner{}
+
+	config := trigger.Config{}
+	json.Unmarshal([]byte(testConfig), &config)
+	//tgr.Init(config, runner)
+
 }
