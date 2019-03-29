@@ -63,6 +63,11 @@ func (t *MyTrigger) Start() error {
 // Stop implements trigger.Trigger.Stop
 func (t *MyTrigger) Stop() error {
 	// stop the trigger
+	log.Debug("Stopping endpoints")
+	for _, timer := range t.timers {
+		//log.Debug("Stopping timer for : ", k)
+		timer.Quit <- true
+	}
 	return nil
 }
 
