@@ -20,7 +20,7 @@ type MyTriggerFactory struct{
 
 // NewFactory create a new Trigger factory
 func NewFactory(md *trigger.Metadata) trigger.Factory {
-	return &MyTriggerFactory{metadata:md}
+	return &MyTriggerFactory{metadata: md}
 }
 
 // New Creates a new trigger instance for a given id

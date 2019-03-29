@@ -5,6 +5,7 @@
   "type": "flogo:trigger",
   "ref": "github.com/wkarasz/FlogoLabs/BuildingTriggers/MyTimerTrigger",
   "description": "trigger description",
+  "homepage": "https://github.com/wkarasz/FlogoLabs/tree/master/BuildingTriggers/MyTimerTrigger"
   "author": "Billy <you.name@example.org>",
   "settings":[
   ],
