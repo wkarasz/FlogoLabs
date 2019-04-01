@@ -1,9 +1,9 @@
 {
-  "name": "flogo-timer",
+  "name": "flogo-timer-wjk",
   "type": "flogo:trigger",
   "ref": "github.com/wkarasz/FlogoLabs/BuildingTriggers/TIBCOTimer",
   "version": "0.0.1",
-  "title": "TIBCO Timer",
+  "title": "TIBCOTimer",
   "description": "Simple Timer trigger",
   "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/trigger/timer",
   "settings": [
