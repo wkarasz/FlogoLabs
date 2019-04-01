@@ -87,7 +87,6 @@ func (t *MyTrigger) scheduleRepeating(endpoint *trigger.Handler) {
 	}
 
 	t.scheduleJobEverySecond(endpoint, fn2)
-
 }
 
 func (t *MyTrigger) scheduleJobEverySecond(tgrHandler *trigger.Handler, fn func()) {
